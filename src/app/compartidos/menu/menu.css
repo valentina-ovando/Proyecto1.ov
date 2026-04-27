@@ -1,0 +1,54 @@
+ /* TIPOGRAFÍA */
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  color: #e91e63 !important;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: white;
+}
+
+/* LINKS */
+.nav-link {
+  color: #555 !important;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.nav-link:hover {
+  color: #e91e63 !important;
+}
+
+/* ACTIVO (cuando entrás a una sección) */
+.nav-link.active {
+  color: #e91e63 !important;
+  font-weight: 600;
+}
+
+/* BUSCADOR */
+.buscador {
+  border-radius: 20px;
+}
+
+/* BOTÓN BUSCAR ROSA */
+.btn-buscar {
+  border: 2px solid #e91e63;
+  color: #e91e63;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.btn-buscar:hover {
+  background-color: #e91e63;
+  color: white;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+  background-color: #fff0f5;
+}
