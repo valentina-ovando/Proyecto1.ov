@@ -3,9 +3,13 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-.navbar-brand {
+/* .navbar-brand { 
   font-family: 'Pacifico', cursive;
   color: #e91e63 !important;
+}*/
+
+.navbar-brand{
+    color:#e91e63 !important;
 }
 
 /* NAVBAR */
@@ -41,6 +45,7 @@ body {
   color: #e91e63;
   border-radius: 20px;
   transition: 0.3s;
+  font-family:"Croissant One", serif; 
 }
 
 .btn-buscar:hover {
@@ -51,4 +56,23 @@ body {
 /* DROPDOWN */
 .dropdown-menu {
   background-color: #fff0f5;
+}
+
+/* ITEMS DEL DROPDOWN */
+.dropdown-item {
+  color: #555;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.dropdown-item:hover {
+  background-color: #ffe4ec;
+  color: #e91e63;
+}
+
+/* ACTIVO (cuando estás en esa sección) */
+.dropdown-item.active {
+  background-color: #ffe4ec !important;
+  color: #e91e63 !important;
+  font-weight: 600;
 }
