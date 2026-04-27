@@ -1,16 +1,17 @@
-<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
 
+    <!-- LOGO / MARCA -->
     <a class="navbar-brand" routerLink='/inicio'>Bella Nails</a>
-    
 
+    <!-- BOTÓN RESPONSIVE -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- CONTENIDO -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <!-- MENÚ IZQUIERDA -->
@@ -24,16 +25,27 @@
           <a class="nav-link" routerLink='/Ofertas' routerLinkActive="active">Ofertas</a>
         </li>
 
+        <!-- MENÚ -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
             Menú
           </a>
-
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink='/Favoritos'>Favoritos</a></li>
             <li><a class="dropdown-item" routerLink='/Registro'>Registro</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink='/InicioSesion'>Inicio de Sesión</a></li>
+          </ul>
+        </li>
+
+        <!-- MÁS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+            Más
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink='/Servicios'>Servicios</a></li>
+            <li><a class="dropdown-item" routerLink='/Cursos'>Cursos de uñas</a></li>
           </ul>
         </li>
 
@@ -51,10 +63,8 @@
           <img src="iconocarrito.svg" width="25">
         </a>
 
-        
       </div>
 
     </div>
   </div>
 </nav>
-
