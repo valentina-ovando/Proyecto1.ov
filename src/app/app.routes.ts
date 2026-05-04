@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { Producto } from './paginas/producto/producto';
+import { Productos } from './paginas/productos/productos';
+import { Producto } from './models/producto';
 import { Inicio } from './paginas/inicio/inicio';
 import { Ofertas } from './paginas/ofertas/ofertas';
 import { Contacto } from './paginas/contacto/contacto';
@@ -13,8 +14,8 @@ export const routes: Routes = [
     {path: '', redirectTo: 'inicio', pathMatch: 'full'},
 
     {path: 'inicio', component: Inicio},
-    {path: 'producto', component: Producto},
-    {path: 'oferta', component: Ofertas},
+    {path: 'productos', component: Productos},
+    {path: 'ofertas', component: Ofertas},
     {path: 'contacto', component: Contacto},
     {path: 'favoritos', component: Favoritos},
     {path: 'registro', component: Registro},
