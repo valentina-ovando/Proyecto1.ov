@@ -42,28 +42,19 @@ export class Productos {
   disponibilidad: true
   
 },
+
 {
-  id: 4,
-  nombre: "REPUJADOR DE CUTICULAS",
-  descripcion: "Combina dos funciones en una sola herramienta: un repujador con curvatura perfecta.",
-  precio: 13400,
+   id: 4,
+  nombre: "PINCEL GEL BRUSH OVAL 02",
+  descripcion: "Combina precisión y suavidad, y gracias a sus cerdas ovaladas son perfectos para trabajar en áreas pequeñas con control y delicadeza.",
+  precio: 12500,
   stock: 10,
-  imagen: "assets/repujador.webp",
-  categoria: "productos",
-  disponibilidad: false
-},
-{
-   id: 5,
-  nombre: "ALICATE",
-  descripcion: "Diseñado para abarcar una mayor superficie en cada corte, este alicate es ideal para técnicas que buscan rapidez.",
-  precio: 8000,
-  stock: 8,
-  imagen: "assets/alicate.webp",
+  imagen: "assets/pincelbrush.webp",
   categoria: "productos",
   disponibilidad: true
 },
 {
-    id: 6,
+    id: 5,
   nombre: "LIMA ZEBRA GRIT 150/150",
   descripcion: "Las limas Pink Mask Professional Nail Files son herramientas manuales formadas por una superficie abrasiva, que se utiliza para desgastar o pulir.",
   precio: 3000,
@@ -71,7 +62,92 @@ export class Productos {
   imagen: "assets/lima1.webp",
   categoria: "productos",
   disponibilidad: true
+},
+{
+    id: 6,
+  nombre: "LIMA ZEBRA GRIT 100/100",
+  descripcion: "Las limas Pink Mask Professional Nail Files son herramientas manuales formadas por una superficie abrasiva, que se utiliza para desgastar o pulir.",
+  precio: 3000,
+  stock: 10,
+  imagen: "assets/lima100.webp",
+  categoria: "productos",
+  disponibilidad: false
+},
+{
+   id: 7,
+  nombre: "LIMA ZEBRA GRIT 180/180",
+  descripcion: "Las limas Pink Mask Professional Nail Files son herramientas manuales formadas por una superficie abrasiva, que se utiliza para desgastar o pulir.",
+  precio: 3000,
+  stock: 5,
+  imagen: "assets/lima180.webp",
+  categoria: "productos",
+  disponibilidad: true
+},
+{
+  id: 8,
+  nombre: "LIMA ZEBRA GRIT 100/180 BUFFER",
+  descripcion: "Pink Mask Pro Buffer es una lima doble fabricada con materia prima japonesa de alta calidad y una capa acolchada que se adapta a los desniveles de la uña.",
+  precio: 3500,
+  stock: 12,
+  imagen: "assets/lima100180b.webp",
+  categoria: "productos",
+  disponibilidad: true
+},
+{
+  id: 9,
+  nombre: "LIMA ZEBRA GRIT 400/3000 SHINER",
+  descripcion: "Pink Mask Pro Magic Shiner es una lima doble, ideal para dar un acabado final a tus uñas. ",
+  precio: 3500,
+  stock: 15,
+  imagen: "assets/lima400sh.webp",
+  categoria: "productos",
+  disponibilidad: true
+},
+{
+   id: 10,
+  nombre: "CARBIDE BIT- 5-IN-1 CROSS CUT BIT",
+  descripcion: "¡Una fresa, cinco usos! Una herramienta multifuncional de abrasividad media.  ",
+  precio: 32500,
+  stock: 12,
+  imagen: "assets/fresa1.webp",
+  categoria: "productos",
+  disponibilidad: true
+},
+{
+  
+   id: 11,
+  nombre: "CARBIDE BIT- 5-IN-1 CROSS CUT BIT",
+  descripcion: "¡Una fresa, cinco usos! Una herramienta multifuncional de abrasividad suave. ",
+  precio: 34500,
+  stock: 12,
+  imagen: "assets/fresa2.webp",
+  categoria: "productos",
+  disponibilidad: true
+},
+{
+   id: 12,
+  nombre: "CARBIDE BIT- 5-IN-1 CROSS CUT BIT",
+  descripcion: "¡Una fresa, cinco usos! Una herramienta multifuncional de alta abrasividad. ",
+  precio: 34500,
+  stock: 12,
+  imagen: "assets/fresa3.webp",
+  categoria: "productos",
+  disponibilidad: true
+},
+{
+   id: 13,
+  nombre: "5-IN-1 EXTRA LONG - FINE- RED",
+  descripcion: "¡Una fresa, cinco usos! La fresa de carburo cinta roja es una herramienta multifuncional suave y de baja abrasividad. ",
+  precio: 43300,
+  stock: 20,
+  imagen: "assets/fresa4.webp",
+  categoria: "productos",
+  disponibilidad: true
 }
+
+
+
+
 
 
 
