@@ -1,1 +1,73 @@
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 
+<div class="registro-container">
+
+  <div class="registro-card">
+
+    <!-- TÍTULO -->
+    <h1>Crear Cuenta </h1>
+    <p class="subtitulo">Registrate en Bella Nails</p>
+
+    <!-- FORMULARIO -->
+    <form>
+
+      <!-- NOMBRE -->
+      <div class="mb-3">
+        <label class="form-label">Nombre completo</label>
+        <input 
+          type="text" 
+          class="form-control input-pink" 
+          placeholder="Ingresá tu nombre">
+      </div>
+
+      <!-- EMAIL -->
+      <div class="mb-3">
+        <label class="form-label">Correo electrónico</label>
+        <input 
+          type="email" 
+          class="form-control input-pink" 
+          placeholder="Ingresá tu correo">
+      </div>
+
+      <!-- CONTRASEÑA -->
+      <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input 
+          type="password" 
+          class="form-control input-pink" 
+          placeholder="Creá una contraseña">
+      </div>
+
+      <!-- CONFIRMAR -->
+      <div class="mb-3">
+        <label class="form-label">Confirmar contraseña</label>
+        <input 
+          type="password" 
+          class="form-control input-pink" 
+          placeholder="Confirmá tu contraseña">
+      </div>
+
+      <!-- CHECK -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="terminos">
+        <label class="form-check-label" for="terminos">
+          Acepto los términos y condiciones
+        </label>
+      </div>
+
+      <!-- BOTÓN -->
+      <button type="submit" class="btn btn-registro w-100">
+        Registrarme
+      </button>
+
+      <!-- LOGIN -->
+      <p class="login-texto">
+        ¿Ya tenés cuenta?
+        <a routerLink="/InicioSesion">Iniciá sesión</a>
+      </p>
+
+    </form>
+
+  </div>
+
+</div>
