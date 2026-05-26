@@ -2,6 +2,7 @@ import { Producto } from '../../models/producto';
 import { Component } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-productos',
   imports: [],

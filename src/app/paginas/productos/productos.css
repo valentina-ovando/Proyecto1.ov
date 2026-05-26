@@ -164,3 +164,19 @@
 
   word-wrap: break-word;
 }
+
+.card{
+    background-color: #fff0f6; /* rosa súper clarito */
+    border: 2px solid #ffc2d7;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.18);
+}
+
+/* imagen */
+.card-img-top{
+    background-color: white;
+    padding: 15px;
+    object-fit: contain;
+    height: 250px;
+}

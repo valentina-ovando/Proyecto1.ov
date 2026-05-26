@@ -1,78 +1,55 @@
- /* TIPOGRAFÍA */
-body {
-  font-family: 'Quicksand', sans-serif;
+.navbar{
+    background-color: #ffb6cf;
+    padding: 12px 20px;
+    box-shadow: 0 4px 10px rgba(255, 105, 155, 0.2);
 }
 
-/* .navbar-brand { 
-  font-family: 'Pacifico', cursive;
-  color: #e91e63 !important;
-}*/
-
+/* marca Bella Nails */
 .navbar-brand{
-    color:#e91e63 !important;
+    color: white !important;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-/* NAVBAR */
-.navbar {
-  background-color: white;
+/* links */
+.nav-link{
+    color: white !important;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-/* LINKS */
-.nav-link {
-  color: #555 !important;
-  transition: 0.3s;
+/* efecto hover */
+.nav-link:hover{
+    color: #ffeaf2 !important;
 }
 
-/* HOVER */
-.nav-link:hover {
-  color: #e91e63 !important;
+/* menú desplegable */
+.dropdown-menu{
+    background-color: #ffd6e5;
+    border: none;
+    border-radius: 15px;
 }
 
-/* ACTIVO (cuando entrás a una sección) */
-.nav-link.active {
-  color: #e91e63 !important;
-  font-weight: 600;
+.dropdown-item:hover{
+    background-color: #ffb6cf;
+    color: white;
 }
 
-/* BUSCADOR */
-.buscador {
-  border-radius: 20px;
+/* botón buscar */
+.btn-buscar{
+    background-color: #ff6f9f;
+    color: white;
+    border: none;
+    border-radius: 10px;
 }
 
-/* BOTÓN BUSCAR ROSA */
-.btn-buscar {
-  border: 2px solid #e91e63;
-  color: #e91e63;
-  border-radius: 20px;
-  transition: 0.3s;
-  font-family:"Croissant One", serif; 
+.btn-buscar:hover{
+    background-color: #ff4f87;
 }
 
-.btn-buscar:hover {
-  background-color: #e91e63;
-  color: white;
+/* input buscador */
+.buscador{
+    border-radius: 10px;
+    border: 1px solid #ffc2d7;
 }
 
-/* DROPDOWN */
-.dropdown-menu {
-  background-color: #fff0f5;
-}
-
-/* ITEMS DEL DROPDOWN */
-.dropdown-item {
-  color: #555;
-  transition: 0.3s;
-}
-
-/* HOVER */
-.dropdown-item:hover {
-  background-color: #ffe4ec;
-  color: #e91e63;
-}
-
-/* ACTIVO (cuando estás en esa sección) */
-.dropdown-item.active {
-  background-color: #ffe4ec !important;
-  color: #e91e63 !important;
-  font-weight: 600;
-}
