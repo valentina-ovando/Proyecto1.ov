@@ -7,8 +7,6 @@
 
 <div class="card">
 
- 
-
   <img src="{{p.imagen}}" class="card-img-top" alt="producto">
 
   <div class="card-body">
@@ -21,10 +19,14 @@
 
     <div class="botones">
 
-      <a href="#" class="btn btn-primary">
+      <!-- BOTÓN AGREGAR AL CARRITO -->
+      <button
+        class="btn btn-primary"
+        (click)="agregarAlCarrito(p)">
         Agregar al carrito
-      </a>
+      </button>
 
+      <!-- BOTÓN VER MÁS -->
       <button 
         class="btn btn-vermas"
         type="button"
@@ -48,6 +50,7 @@
     </div>
 
   </div>
+
 </div>
 
 }

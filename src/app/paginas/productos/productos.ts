@@ -1,7 +1,6 @@
 import { Producto } from '../../models/producto';
 import { Component } from '@angular/core';
-
-
+import { Carrito } from '../../servicios/carrito';
 
 @Component({
   selector: 'app-productos',
@@ -10,7 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './productos.css',
 })
 export class Productos {
-  Producto: Producto[]=[
+
+  constructor(private carritoService: Carrito) {}
+
+  agregarAlCarrito(producto: Producto) {
+    this.carritoService.agregarProducto(producto);
+  }
+
+  Producto: Producto[] = [
     {
     id: 1,
     nombre: "LINER 00/1",
@@ -146,12 +152,5 @@ export class Productos {
   disponibilidad: true
 }
 
-
-
-
-
-
-
-    
-  ]
+  ];
 }

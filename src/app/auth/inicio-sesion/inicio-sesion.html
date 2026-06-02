@@ -1,55 +1,33 @@
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
-
 <div class="login-container">
-
   <div class="login-card">
 
-    <!-- TÍTULO -->
-    <h1>Bienvenida/o </h1>
-    <p class="subtitulo">Iniciá sesión en Nail Salon</p>
+    <h1>Nail Salon</h1>
+    <p class="subtitulo">Iniciar sesión</p>
 
-    <!-- FORMULARIO -->
-    <form>
-
-      <!-- EMAIL -->
-      <div class="mb-3">
-        <label class="form-label">Correo electrónico</label>
-        <input 
-          type="email" 
-          class="form-control input-pink" 
-          placeholder="Ingresá tu correo">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <input
+          type="text"
+          class="form-control input-pink"
+          placeholder="Usuario">
       </div>
 
-      <!-- CONTRASEÑA -->
-      <div class="mb-3">
-        <label class="form-label">Contraseña</label>
-        <input 
-          type="password" 
-          class="form-control input-pink" 
-          placeholder="Ingresá tu contraseña">
+      <div class="col-md-6 mb-3">
+        <input
+          type="password"
+          class="form-control input-pink"
+          placeholder="Contraseña">
       </div>
+    </div>
 
-      <!-- RECORDAR -->
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" id="recordarme">
-        <label class="form-check-label" for="recordarme">
-          Recordarme
-        </label>
-      </div>
+    <button class="btn btn-login w-100">
+      Ingresar
+    </button>
 
-      <!-- BOTÓN -->
-      <button type="submit" class="btn btn-login w-100">
-        Ingresar
-      </button>
-
-      <!-- REGISTRO -->
-      <p class="registro-texto">
-        ¿No tenés cuenta?
-        <a routerLink="/Registro">Registrate</a>
-      </p>
-
-    </form>
+    <p class="registro-texto">
+      ¿No tiene cuenta?
+      <a href="#">Registrarse</a>
+    </p>
 
   </div>
-
 </div>
