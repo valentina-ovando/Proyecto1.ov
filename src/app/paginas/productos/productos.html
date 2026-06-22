@@ -5,35 +5,47 @@
 
 <div class="card">
 
+  <!-- BOTÓN FAVORITOS -->
+  <button class="btn-favorito">
+    <i class="bi bi-heart-fill"></i>
+  </button>
+
+  <!-- IMAGEN -->
   <img src="{{p.imagen}}" class="card-img-top" alt="producto">
 
   <div class="card-body">
 
+    <!-- NOMBRE -->
     <h5 class="card-title">{{p.nombre}}</h5>
 
+    <!-- PRECIO -->
     <p class="card-text precio">${{p.precio}}</p>
 
+    <!-- CATEGORÍA -->
     <p class="card-text">{{p.categoria}}</p>
 
     <div class="botones">
 
+      <!-- AGREGAR AL CARRITO -->
       <a href="#" class="btn btn-primary">
         Agregar al carrito
       </a>
 
-      <button 
+      <!-- VER MÁS -->
+      <button
         class="btn btn-vermas"
         type="button"
         data-bs-toggle="collapse"
         [attr.data-bs-target]="'#descripcion' + p.id">
 
         Ver más
+
       </button>
 
     </div>
 
     <!-- DESCRIPCIÓN -->
-    <div 
+    <div
       class="collapse mt-3"
       [attr.id]="'descripcion' + p.id">
 

@@ -1,0 +1,72 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to right, #fff0f5, #ffe4ec);
+}
+
+.promo-cursos {
+  max-width: 1200px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.promo-contenido {
+  flex: 1;
+  padding: 50px;
+}
+
+.promo-contenido h1 {
+  font-family: 'Pacifico', cursive;
+  color: #e91e63;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.promo-contenido p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.cursos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.cursos-lista span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.btn-inscribirme {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-inscribirme:hover {
+  background: #d81b60;
+}
+
+.promo-imagen {
+  flex: 1;
+}
+
+.promo-imagen img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+} 
