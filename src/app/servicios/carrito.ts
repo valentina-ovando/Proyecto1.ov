@@ -6,9 +6,10 @@ import { Producto } from '../models/producto';
 })
 export class Carrito {
 
-  carrito: any[] = [];
+  private carrito: any[] = [];
 
-  agregarProducto(producto: Producto) {
+  // CREATE
+  crear(producto: Producto) {
 
     const existe = this.carrito.find(
       p => p.id === producto.id
@@ -22,17 +23,29 @@ export class Carrito {
         cantidad: 1
       });
     }
-
   }
 
-  obtenerCarrito() {
+  // READ
+  leer() {
     return this.carrito;
   }
 
-  eliminarProducto(id: number) {
+  // UPDATE
+  actualizar(id: number, cantidad: number) {
+
+    const producto = this.carrito.find(
+      p => p.id === id
+    );
+
+    if (producto) {
+      producto.cantidad = cantidad;
+    }
+  }
+
+  // DELETE
+  eliminar(id: number) {
     this.carrito = this.carrito.filter(
       p => p.id !== id
     );
   }
-
 }
