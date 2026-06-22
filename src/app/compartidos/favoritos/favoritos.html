@@ -1,3 +1,21 @@
+<h1>Favoritos</h1>
 
+@for(p of productosFavoritos; track p.id){
+
+<div class="card">
+
+  <img [src]="p.imagen" width="150">
+
+  <h3>{{p.nombre}}</h3>
+
+  <p>${{p.precio}}</p>
+
+  <button (click)="eliminar(p.id)">
+    Eliminar
+  </button>
+
+</div>
+
+}
 
   

@@ -7,4 +7,5 @@ export interface Producto{
     imagen:         string;
     categoria:      string;
     disponibilidad: boolean;
+    cantidad?: number;
 }
