@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
+ import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FavoritosService {
+export class FavoritosServicios {
 
   favoritos: Producto[] = [];
 
   constructor() { }
 
-  // CREATE
   agregarFavorito(producto: Producto){
 
     const existe = this.favoritos.find(
@@ -22,12 +21,10 @@ export class FavoritosService {
     }
   }
 
-  // READ
   obtenerFavoritos(){
     return this.favoritos;
   }
 
-  // DELETE
   eliminarFavorito(id:number){
     this.favoritos = this.favoritos.filter(
       p => p.id !== id

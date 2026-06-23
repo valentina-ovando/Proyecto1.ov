@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../../models/producto';
-import { FavoritosService } from '../../services/favoritos.service';
+import { FavoritosServicios } from '../../servicios/favoritos-servicios';
 
 @Component({
   selector: 'app-favoritos',
@@ -13,20 +13,20 @@ export class Favoritos implements OnInit {
   productosFavoritos: Producto[] = [];
 
   constructor(
-    private favoritosService: FavoritosService
+    private favoritosServicios: FavoritosServicios
   ) {}
 
   ngOnInit(): void {
     this.productosFavoritos =
-      this.favoritosService.obtenerFavoritos();
+      this.favoritosServicios.obtenerFavoritos();
   }
 
-  eliminar(id: number) {
+  eliminar(id: number): void {
 
-    this.favoritosService.eliminarFavorito(id);
+    this.favoritosServicios.eliminarFavorito(id);
 
     this.productosFavoritos =
-      this.favoritosService.obtenerFavoritos();
+      this.favoritosServicios.obtenerFavoritos();
   }
 
 }

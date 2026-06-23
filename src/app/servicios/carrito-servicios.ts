@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+ import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CarritoService {
+export class CarritoServicios {
 
   carrito: any[] = [];
 
