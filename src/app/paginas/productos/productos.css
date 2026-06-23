@@ -181,23 +181,64 @@
     height: 250px;
 }
 
-.favoritos-container {
+/* CONTENEDOR DE BOTONES */
+.botones {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
 }
 
-.btn-favorito {
-  background: none;
+/* BOTÓN CARRITO */
+.btn-carrito {
+  background-color: #e91e63;
+  color: white;
   border: none;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn-favorito i {
+.btn-carrito:hover {
+  background-color: #d81b60;
+}
+
+/* BOTÓN FAVORITOS */
+.btn-favorito {
+  background-color: white;
   color: #e91e63;
-  font-size: 24px;
+  border: 2px solid #ffd1dc;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn-favorito:hover i {
-  color: #d81b60;
+.btn-favorito:hover {
+  background-color: #fff0f5;
+}
+
+/* BOTÓN VER MÁS */
+.btn-vermas {
+  background-color: #fff0f5;
+  color: #e91e63;
+  border: 2px solid #ffd1dc;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-vermas:hover {
+  background-color: #e91e63;
+  color: white;
 }

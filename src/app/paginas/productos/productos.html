@@ -22,19 +22,29 @@
         <!-- <i [class]="esFavorito(p.id) ? 'fas fa-heart' : 'far fa-heart'"></i> -->
       <!-- </button> -->
 
-     <button (click)="agregarCarrito(p)"
-     Agregar al carrito></button>
+     <div class="botones">
 
-      <button (click)="agregarFavorito(p)"></button>
+  <button
+    class="btn-carrito"
+    (click)="agregarCarrito(p)">
+     Agregar al carrito
+  </button>
 
-      <button 
-        class="btn btn-vermas"
-        type="button"
-        data-bs-toggle="collapse"
-        [attr.data-bs-target]="'#descripcion' + p.id">
+  <button
+    class="btn-favorito"
+    (click)="agregarFavorito(p)">
+    
+  </button>
 
-        Ver más
-      </button>
+  <button
+    class="btn btn-vermas"
+    type="button"
+    data-bs-toggle="collapse"
+    [attr.data-bs-target]="'#descripcion' + p.id">
+    Ver más
+  </button>
+
+</div>
 
  
 
