@@ -1,32 +1,68 @@
-<table class="table table-bordered border-danger-subtle">
+<table class="table table-bordered border-danger-subtle text-center align-middle">
+
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th>Imagen</th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Eliminar</th>
     </tr>
   </thead>
+
   <tbody>
+
+    @for (p of productosCarrito; track p.id) {
+
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+
+      <td>
+        <img [src]="p.imagen" width="80">
+      </td>
+
+      <td>
+        {{ p.nombre }}
+      </td>
+
+      <td>
+
+        <button
+          class="btn btn-sm btn-outline-danger"
+          (click)="disminuir(p.id)">
+          -
+        </button>
+
+        <span class="mx-2">
+          {{ p.cantidad }}
+        </span>
+
+        <button
+          class="btn btn-sm btn-outline-success"
+          (click)="aumentar(p.id)">
+          +
+        </button>
+
+        <br><br>
+
+        <strong>${{ p.precio * p.cantidad }}</strong>
+
+      </td>
+
+      <td>
+
+        <button
+          class="btn btn-danger"
+          (click)="eliminar(p.id)">
+          Eliminar
+        </button>
+
+      </td>
+
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
+
+    }
+
   </tbody>
+
 </table>
 
 
