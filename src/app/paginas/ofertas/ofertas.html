@@ -1,6 +1,6 @@
 <div class="ofertas-container">
 
-  <h1 class="titulo-ofertas"> Ofertas Especiales </h1>
+  <h1 class="titulo-ofertas">Ofertas Especiales</h1>
 
   <p class="subtitulo">
     Aprovechá nuestras mejores promociones por tiempo limitado.
@@ -8,67 +8,157 @@
 
   <div class="ofertas-grid">
 
+    <!-- OFERTA 1 -->
     <div class="oferta-card">
       <div class="etiqueta">-20%</div>
       <img src="assets/pincel1.webp" alt="Pincel">
       <h3>LINER 01</h3>
       <p>Antes: $12.500</p>
       <p><strong>Ahora: $10.000</strong></p>
-      <button class="btn-oferta">Comprar</button>
+
+      <button
+        class="btn-oferta"
+        (click)="agregarCarrito({
+          id: 3,
+          nombre: 'LINER 01',
+          descripcion: 'Pincel de carga. Ideal para rellenos pequeños o delineados gruesos.',
+          precio: 10000,
+          stock: 20,
+          imagen: 'assets/pincel1.webp',
+          categoria: 'ofertas',
+          disponibilidad: true
+        })">
+        Comprar
+      </button>
     </div>
 
+    <!-- OFERTA 2 -->
     <div class="oferta-card">
       <div class="etiqueta">-20%</div>
       <img src="assets/pincel2.webp" alt="Pincel">
       <h3>LINER 02</h3>
       <p>Antes: $12.500</p>
       <p><strong>Ahora: $10.000</strong></p>
-      <button class="btn-oferta">Comprar</button>
+
+      <button
+        class="btn-oferta"
+        (click)="agregarCarrito({
+          id: 2,
+          nombre: 'LINER 02',
+          descripcion: 'Líneas largas y gruesas.',
+          precio: 10000,
+          stock: 20,
+          imagen: 'assets/pincel2.webp',
+          categoria: 'ofertas',
+          disponibilidad: true
+        })">
+        Comprar
+      </button>
     </div>
 
+    <!-- OFERTA 3 -->
     <div class="oferta-card">
       <div class="etiqueta">-15%</div>
       <img src="assets/lima1.webp" alt="Lima">
       <h3>LIMA ZEBRA 150/150</h3>
       <p>Antes: $3.000</p>
       <p><strong>Ahora: $2.550</strong></p>
-      <button class="btn-oferta">Comprar</button>
+
+      <button
+        class="btn-oferta"
+        (click)="agregarCarrito({
+          id: 5,
+          nombre: 'LIMA ZEBRA GRIT 150/150',
+          descripcion: 'Lima profesional.',
+          precio: 2550,
+          stock: 10,
+          imagen: 'assets/lima1.webp',
+          categoria: 'ofertas',
+          disponibilidad: true
+        })">
+        Comprar
+      </button>
     </div>
 
+    <!-- OFERTA 4 -->
     <div class="oferta-card">
       <div class="etiqueta">-15%</div>
       <img src="assets/lima180.webp" alt="Lima">
       <h3>LIMA ZEBRA 180/180</h3>
       <p>Antes: $3.000</p>
       <p><strong>Ahora: $2.550</strong></p>
-      <button class="btn-oferta">Comprar</button>
+
+      <button
+        class="btn-oferta"
+        (click)="agregarCarrito({
+          id: 7,
+          nombre: 'LIMA ZEBRA GRIT 180/180',
+          descripcion: 'Lima profesional.',
+          precio: 2550,
+          stock: 5,
+          imagen: 'assets/lima180.webp',
+          categoria: 'ofertas',
+          disponibilidad: true
+        })">
+        Comprar
+      </button>
     </div>
 
+    <!-- OFERTA 5 -->
     <div class="oferta-card">
       <div class="etiqueta">-10%</div>
       <img src="assets/fresa1.webp" alt="Fresa">
       <h3>CARBIDE BIT</h3>
       <p>Antes: $32.500</p>
       <p><strong>Ahora: $29.250</strong></p>
-      <button class="btn-oferta">Comprar</button>
+
+      <button
+        class="btn-oferta"
+        (click)="agregarCarrito({
+          id: 10,
+          nombre: 'CARBIDE BIT',
+          descripcion: 'Fresa multifuncional.',
+          precio: 29250,
+          stock: 12,
+          imagen: 'assets/fresa1.webp',
+          categoria: 'ofertas',
+          disponibilidad: true
+        })">
+        Comprar
+      </button>
     </div>
 
+    <!-- OFERTA 6 -->
     <div class="oferta-card">
       <div class="etiqueta">-10%</div>
       <img src="assets/fresa4.webp" alt="Fresa">
       <h3>5-IN-1 EXTRA LONG</h3>
       <p>Antes: $43.300</p>
       <p><strong>Ahora: $38.970</strong></p>
-      <button class="btn-oferta">Comprar</button>
+
+      <button
+        class="btn-oferta"
+        (click)="agregarCarrito({
+          id: 13,
+          nombre: '5-IN-1 EXTRA LONG',
+          descripcion: 'Fresa multifuncional.',
+          precio: 38970,
+          stock: 20,
+          imagen: 'assets/fresa4.webp',
+          categoria: 'ofertas',
+          disponibilidad: true
+        })">
+        Comprar
+      </button>
     </div>
 
+    <!-- TARJETA FINAL -->
     <div class="oferta-card oferta-grande">
-      <h2> Compra superior a $50.000</h2>
+      <h2>Compra superior a $50.000</h2>
       <p>
         Obtené envío gratuito y un regalo sorpresa en tu pedido.
       </p>
     </div>
-
 
   </div>
 
