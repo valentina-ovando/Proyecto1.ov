@@ -25,9 +25,7 @@
 
       <td>
 
-        <button
-          class="btn btn-sm btn-outline-danger"
-          (click)="disminuir(p.id)">
+        <button class="btn btn-sm btn-outline-danger" (click)="disminuir(p.id)">
           -
         </button>
 
@@ -35,9 +33,7 @@
           {{ p.cantidad }}
         </span>
 
-        <button
-          class="btn btn-sm btn-outline-success"
-          (click)="aumentar(p.id)">
+        <button class="btn btn-sm btn-outline-success" (click)="aumentar(p.id)">
           +
         </button>
 
@@ -49,9 +45,7 @@
 
       <td>
 
-        <button
-          class="btn btn-danger"
-          (click)="eliminar(p.id)">
+        <button class="btn btn-danger" (click)="eliminar(p.id)">
           Eliminar
         </button>
 
@@ -65,6 +59,18 @@
 
 </table>
 
+<!-- TOTAL Y BOTÓN COMPRAR -->
 
 
+<div class="text-center mt-5 mb-4">
 
+  <h4 class="mb-3">
+    Total de la compra:
+    <strong>${{ calcularTotal() }}</strong>
+  </h4>
+
+  <button class="btn btn-success px-5 py-2" (click)="comprar()">
+    Comprar
+  </button>
+
+</div>

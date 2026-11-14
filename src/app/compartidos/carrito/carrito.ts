@@ -37,4 +37,14 @@ export class Carrito implements OnInit {
 
   }
 
+  calcularTotal(): number {
+  return this.productosCarrito.reduce(
+    (total, p) => total + (p.precio * p.cantidad), 0
+  );
+}
+
+comprar() {
+  alert("¡Gracias por tu compra! Total: $" + this.calcularTotal());
+}
+
 }
