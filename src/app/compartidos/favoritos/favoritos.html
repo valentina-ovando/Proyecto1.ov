@@ -1,29 +1,8 @@
-<h1>Favoritos</h1>
-
-@for(p of productosFavoritos; track p.id){
-
-<div class="card">
-
-  <img [src]="p.imagen" width="150">
-
-  <h3>{{p.nombre}}</h3>
-
-  <p>${{p.precio}}</p>
-
-  <button
-    class="btn-carrito"
-    (click)="agregarCarrito(p)">
-    <i class="bi bi-cart4"></i> Agregar al carrito
-  </button>
-
-  <button
-    class="btn btn-danger"
-    (click)="eliminar(p.id)">
-    Eliminar
-  </button>
-
-</div>
-
+@for (f of favoritos; track f.id) {
+ <div class="fav">
+ {{ f.nombre }} — ${{ f.precio }}
+ <button (click)="quitar(f.id_producto)">Quitar</button>
+ </div>
+} @empty {
+ <p>Todavía no tenés favoritos.</p>
 }
-
-  

@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
-
+import { Component } from "@angular/core";
+import { Router, RouterLink } from "@angular/router"; // RouterLink permite usar routerLink en el HTML
+import { AuthService } from "../../servicios/auth-servicios";
 @Component({
-  selector: 'app-menu',
-  imports: [RouterLink],
-  templateUrl: './menu.html',
-  styleUrl: './menu.css',
+ selector: "app-nav",
+ imports: [RouterLink],
+ templateUrl: "./menu.html"
 })
-export class Menu {}
+export class NavComponent {
+ // "public" para poder usar auth.esAdmin() directamente desde el HTML
+ constructor(public auth: AuthService, private router: Router) {}
+ // Botón Salir: cierra la sesión y vuelve a la pantalla de login
+ salir(): void {
+ this.auth.logout();
+ this.router.navigate(["/auth/inicio-sesion"]);
+ }
+}

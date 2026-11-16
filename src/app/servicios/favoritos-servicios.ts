@@ -1,33 +1,13 @@
- import { Injectable } from '@angular/core';
-import { Producto } from '../models/producto';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class FavoritosServicios {
-
-  favoritos: Producto[] = [];
-
-  constructor() { }
-
-  agregarFavorito(producto: Producto){
-
-    const existe = this.favoritos.find(
-      p => p.id === producto.id
-    );
-
-    if(!existe){
-      this.favoritos.push({...producto});
-    }
-  }
-
-  obtenerFavoritos(){
-    return this.favoritos;
-  }
-
-  eliminarFavorito(id:number){
-    this.favoritos = this.favoritos.filter(
-      p => p.id !== id
-    );
-  }
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+@Injectable({ providedIn: "root" })
+export class FavoritoService {
+ private apiUrl = "http://localhost/api_proyecto/public/favoritos";
+ constructor(private http: HttpClient) {}
+ listar(): Observable<any[]> { return this.http.get<any[]>(this.apiUrl); }
+ agregar(id: number): Observable<any> { return
+this.http.post(`${this.apiUrl}/agregar`, { id_producto: id }); }
+ eliminar(id: number): Observable<any> { return
+this.http.delete(`${this.apiUrl}/eliminar/${id}`); }
 }

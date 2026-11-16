@@ -18,4 +18,13 @@ export class Ofertas {
     this.carritoServicios.agregarCarrito(producto);
   }
 
+  // paginas/ofertas/ofertas.component.ts
+ngOnInit(): void {
+ this.productService.listar().subscribe(lista => {
+ // copia la lista, la ordena de menor a mayor precio y se queda con los 6 primeros
+ this.ofertas = [...lista].sort((a, b) => a.precio - b.precio).slice(0, 6);
+ });
+}
+
+
 }

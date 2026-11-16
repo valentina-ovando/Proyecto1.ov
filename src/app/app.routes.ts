@@ -9,6 +9,8 @@ import { Registro } from './auth/registro/registro';
 import { InicioSesion } from './auth/inicio-sesion/inicio-sesion';
 import { Carrito } from './compartidos/carrito/carrito';
 import { Cursos } from './paginas/cursos/cursos';
+import { adminGuard } from "./guard/admin.guard";
+
 
 
 export const routes: Routes = [
@@ -23,6 +25,7 @@ export const routes: Routes = [
     {path: 'registro', component: Registro},
     {path: 'inicio-sesion', component: InicioSesion},
     {path: 'carrito', component: Carrito},
+    { path: "paginas/admin", component: AdminComponent, canActivate: [adminGuard]},
     {path: 'cursos', component: Cursos},
     
 
