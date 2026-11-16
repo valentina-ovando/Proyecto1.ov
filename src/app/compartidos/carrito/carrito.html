@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @for (i of items; track i.id_producto) {
  <div class="item">
  {{ i.nombre }} — ${{ i.precio_unitario }} x {{ i.cantidad }}
@@ -13,3 +14,81 @@
  <button (click)="vaciar()">Vaciar carrito</button>
  <button (click)="finalizarCompra()">Finalizar compra</button>
 }
+=======
+<table class="table table-bordered border-danger-subtle text-center align-middle">
+
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    @for (p of productosCarrito; track p.id) {
+
+    <tr>
+
+      <td>
+        <img [src]="p.imagen" width="80">
+      </td>
+
+      <td>
+        {{ p.nombre }}
+      </td>
+
+      <td>
+
+        <button class="btn btn-sm btn-outline-danger" (click)="disminuir(p.id)">
+          -
+        </button>
+
+        <span class="mx-2">
+          {{ p.cantidad }}
+        </span>
+
+        <button class="btn btn-sm btn-outline-success" (click)="aumentar(p.id)">
+          +
+        </button>
+
+        <br><br>
+
+        <strong>${{ p.precio * p.cantidad }}</strong>
+
+      </td>
+
+      <td>
+
+        <button class="btn btn-danger" (click)="eliminar(p.id)">
+          Eliminar
+        </button>
+
+      </td>
+
+    </tr>
+
+    }
+
+  </tbody>
+
+</table>
+
+<!-- TOTAL Y BOTÓN COMPRAR -->
+
+
+<div class="text-center mt-5 mb-4">
+
+  <h4 class="mb-3">
+    Total de la compra:
+    <strong>${{ calcularTotal() }}</strong>
+  </h4>
+
+  <button class="btn btn-success px-5 py-2" (click)="comprar()">
+    Comprar
+  </button>
+
+</div>
+>>>>>>> 2a2e4ee5d495bd45233f76f7dae93727d84d0fea
