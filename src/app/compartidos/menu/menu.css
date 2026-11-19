@@ -1,29 +1,29 @@
-.navbar{
+/* .navbar{
     background-color: #ffb6cf;
     padding: 12px 20px;
     box-shadow: 0 4px 10px rgba(255, 105, 155, 0.2);
 }
 
-/* marca Bella Nails */
+/* marca Bella Nails 
 .navbar-brand{
     color: white !important;
     font-size: 28px;
     font-weight: bold;
 }
 
-/* links */
+/* links 
 .nav-link{
     color: white !important;
     font-weight: 500;
     transition: 0.3s;
 }
 
-/* efecto hover */
+/* efecto hover 
 .nav-link:hover{
     color: #ffeaf2 !important;
 }
 
-/* menú desplegable */
+/* menú desplegable 
 .dropdown-menu{
     background-color: #ffd6e5;
     border: none;
@@ -35,7 +35,7 @@
     color: white;
 }
 
-/* botón buscar */
+/* botón buscar 
 .btn-buscar{
     background-color: #ff6f9f;
     color: white;
@@ -47,7 +47,7 @@
     background-color: #ff4f87;
 }
 
-/* input buscador */
+/* input buscador 
 .buscador{
     border-radius: 10px;
     border: 1px solid #ffc2d7;
@@ -57,5 +57,75 @@
   color: black;
   font-size: 1.4rem;
   font-weight: bold;
+} */
+
+.navbar {
+  background-color: #ffb6cf;
+  padding: 12px 20px;
+  box-shadow: 0 4px 10px rgba(255, 105, 155, 0.2);
 }
 
+/* marca Bella Nails */
+.navbar-brand {
+  color: white !important;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* links */
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffeaf2 !important;
+}
+
+/* texto "Hola, usuario" */
+.navbar-text {
+  color: white;
+  font-weight: 500;
+}
+
+/* iconos */
+.icono-favoritos {
+  color: #ff4f87;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.icono-carrito {
+  font-size: 1.1rem;
+}
+
+/* menú desplegable */
+.dropdown-menu {
+  background-color: #ffd6e5;
+  border: none;
+  border-radius: 15px;
+}
+
+.dropdown-item:hover {
+  background-color: #ffb6cf;
+  color: white;
+}
+
+/* botón */
+.btn-buscar {
+  background-color: #ff6f9f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-buscar:hover {
+  background-color: #ff4f87;
+}
+
+/* input buscador */
+.buscador {
+  border-radius: 10px;
+  border: 1px solid #ffc2d7;
+}

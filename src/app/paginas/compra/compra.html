@@ -1,0 +1,10 @@
+<h2>Resumen de tu compra</h2>
+@for (i of items; track i.id_producto) {
+ <p>{{ i.nombre }} x {{ i.cantidad }} — ${{ i.precio_unitario }}</p>
+}
+<p><strong>Total: ${{ total() }}</strong></p>
+@if (items.length > 0) {
+ <button (click)="finalizar()">Confirmar compra</button>
+} @else {
+ <p>No hay productos en el carrito.</p>
+}

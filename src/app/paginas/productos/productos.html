@@ -1,5 +1,5 @@
 <!-- paginas/productos/productos.component.html -->
-<input [(ngModel)]="buscar" placeholder="Buscar producto...">
+ <input [(ngModel)]="buscar" placeholder="Buscar producto...">
 <button (click)="cargar()">Buscar</button>
 @for (p of productos; track p.id) {
  <div class="tarjeta">

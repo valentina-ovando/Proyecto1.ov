@@ -1,17 +1,90 @@
-<nav>
- <a routerLink="/inicio">Inicio</a>
- <a routerLink="/productos">Productos</a>
- <a routerLink="/paginas/ofertas">Ofertas</a>
- <a routerLink="/paginas/contacto">Contacto</a>
- @if (auth.estaLogueado()) {
- <!-- Este enlace aparece SOLO si el usuario que inició sesión es admin -->
- @if (auth.esAdmin()) {
- <a routerLink="/paginas/admin">Panel admin</a>
- }
- <span>Hola, {{ auth.nombreUsuario() }}</span>
- <button (click)="salir()">Salir</button>
- } @else {
- <a routerLink="/auth/inicio-sesion">Ingresar</a>
- <a routerLink="/auth/registro">Registrarse</a>
- }
+<!-- <nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/inicio">Bella Nails</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuPrincipal">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" routerLink="/inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/paginas/ofertas">Ofertas</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/cursos">Cursos</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/paginas/contacto">Contacto</a></li>
+
+        @if (auth.estaLogueado()) {
+          <li class="nav-item"><a class="nav-link" routerLink="/favoritos"><span class="icono-favoritos">♥</span> Favoritos</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/carrito">Carrito</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/paginas/compras">Mis compras</a></li>
+
+          Este enlace aparece SOLO si el usuario que inició sesión es admin -->
+          <!-- @if (auth.esAdmin()) {
+            <li class="nav-item"><a class="nav-link" routerLink="/paginas/admin">Panel admin</a></li>
+          }
+        }
+      </ul>
+
+      <ul class="navbar-nav align-items-lg-center">
+        @if (auth.estaLogueado()) {
+          <li class="nav-item"><span class="navbar-text me-3">Hola, {{ auth.nombreUsuario() }}</span></li>
+          <li class="nav-item"><button class="btn btn-buscar btn-sm" (click)="salir()">Salir</button></li>
+        } @else {
+          <li class="nav-item"><a class="nav-link" routerLink="/auth/inicio-sesion">Ingresar</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/auth/registro">Registrarse</a></li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/inicio">Bella Nails</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuPrincipal">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" routerLink="/inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/paginas/ofertas">Ofertas</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/cursos">Cursos</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/paginas/contacto">Contacto</a></li>
+      </ul>
+
+      <ul class="navbar-nav align-items-lg-center">
+        <!-- Siempre visibles -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/favoritos">
+            <span class="icono-favoritos">♥</span> Favoritos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/carrito">
+            <span class="icono-carrito">🛒</span> Carrito
+          </a>
+        </li>
+
+        @if (auth.estaLogueado()) {
+          <li class="nav-item"><a class="nav-link" routerLink="/paginas/compras">Mis compras</a></li>
+
+          <!-- Solo si el usuario es admin -->
+          @if (auth.esAdmin()) {
+            <li class="nav-item"><a class="nav-link" routerLink="/paginas/admin">Panel admin</a></li>
+          }
+
+          <li class="nav-item"><span class="navbar-text mx-3">Hola, {{ auth.nombreUsuario() }}</span></li>
+          <li class="nav-item"><button class="btn btn-buscar btn-sm" (click)="salir()">Salir</button></li>
+        } @else {
+          <li class="nav-item"><a class="nav-link" routerLink="/auth/inicio-sesion">Ingresar</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/auth/registro">Registrarse</a></li>
+        }
+      </ul>
+    </div>
+  </div>
 </nav>

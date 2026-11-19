@@ -1,0 +1,10 @@
+<!-- Si ya llegaron los datos del ticket, los mostramos -->
+@if (ticket) {
+ <h2>Ticket {{ ticket.numero_ticket }}</h2>
+ <p>Fecha: {{ ticket.fecha }}</p>
+ <!-- target="_blank" lo abre en otra pestaña; "download" sugiere descargarlo -->
+ <a [href]="urlPdf" target="_blank" download>Descargar PDF</a>
+} @else {
+ <!-- Mientras tanto, mostramos un aviso -->
+ <p>Cargando ticket...</p>
+}
