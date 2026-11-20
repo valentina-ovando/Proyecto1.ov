@@ -1,5 +1,5 @@
 // paginas/productos/productos.ts
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit,signal } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { ProductService } from "../../servicios/productos-servicios";
 import { CarritoService } from "../../servicios/carrito-servicios";
@@ -12,7 +12,7 @@ import { Producto } from "../../models/producto";
   templateUrl: "./productos.html"
 })
 export class ProductosComponent implements OnInit {
-  productos: Producto[] = [];
+  productos = signal<Producto[]>([]);
    buscar = "";
 
   constructor(
@@ -24,11 +24,13 @@ export class ProductosComponent implements OnInit {
   ngOnInit(): void {
     this.cargar(); // al abrir la página, trae todo
   }
-
   cargar(): void {
-    this.productService
-      .listar()
-      .subscribe((lista: Producto[]) => (this.productos = lista));
+    this.productService.listar(this.buscar).subscribe({
+      next: (lista: any) => {
+        this.productos.set(Array.isArray(lista) ? lista : lista.data ?? []);
+      },
+      error: (err) => console.error("ERROR AL CARGAR:", err)
+    });
   }
 
   agregar(idProducto: number): void {

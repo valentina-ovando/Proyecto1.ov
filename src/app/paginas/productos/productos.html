@@ -1,16 +1,44 @@
-<!-- paginas/productos/productos.component.html -->
+<!-- paginas/productos/productos.component.html
  <input [(ngModel)]="buscar" placeholder="Buscar producto...">
 <button (click)="cargar()">Buscar</button>
-@for (p of productos; track p.id) {
+@for (p of productos(); track p.id) {
  <div class="tarjeta">
- <img [src]="'http://localhost/api_proyecto/public/uploads/' + p.imagen"
+<img [src]="'http://localhost/api_proyecto/public/' + p.imagen" [alt]="p.nombre">
 [alt]="p.nombre">
  <h3>{{ p.nombre }}</h3>
  <p>{{ p.descripcion }}</p>
  <strong>${{ p.precio }}</strong>
- <button (click)="agregar(p.id)">Agregar al carrito</button>
- <button (click)="favorito(p.id)">Favorito</button>
+<button (click)="agregar(+p.id)">Agregar al carrito</button>
+<button (click)="favorito(+p.id)">Favorito</button>
  </div>
 } @empty {
  <p>No se encontraron productos.</p>
-}
+} -->
+
+<section class="productos">
+  <h2 class="titulo">Nuestros Productos</h2>
+
+  <div class="buscador">
+    <input [(ngModel)]="buscar" (keyup.enter)="cargar()" placeholder="Buscar producto...">
+    <button class="btn-buscar" (click)="cargar()">Buscar</button>
+  </div>
+
+  <div class="grilla">
+    @for (p of productos(); track p.id) {
+      <div class="tarjeta">
+        <div class="imagen">
+          <img [src]="'http://localhost/api_proyecto/public/' + p.imagen" [alt]="p.nombre">
+        </div>
+        <h3>{{ p.nombre }}</h3>
+        <p class="descripcion">{{ p.descripcion }}</p>
+        <strong class="precio">${{ p.precio }}</strong>
+        <div class="acciones">
+          <button class="btn-comprar" (click)="agregar(+p.id)">Agregar al carrito</button>
+          <button class="btn-fav" (click)="favorito(+p.id)" aria-label="Agregar a favoritos">♥</button>
+        </div>
+      </div>
+    } @empty {
+      <p class="vacio">No se encontraron productos.</p>
+    }
+  </div>
+</section>

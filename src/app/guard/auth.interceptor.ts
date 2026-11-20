@@ -1,14 +1,10 @@
-// guard/auth.interceptor.ts
-import { HttpInterceptorFn } from "@angular/common/http";
-import { inject } from "@angular/core";
-import { AuthService } from "../servicios/auth-servicios";
-export const authInterceptor: HttpInterceptorFn = (peticion, siguiente) => {
- const token = inject(AuthService).getToken();
- if (token) {
- // las peticiones son inmutables: se clona la original agregándole el header
- peticion = peticion.clone({
- setHeaders: { Authorization: `Bearer ${token}` }
- });
- }
- return siguiente(peticion); // sigue su camino hacia la API
+// auth.interceptor.ts
+import { HttpInterceptorFn } from '@angular/common/http';
+
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  const token = localStorage.getItem('token'); // usá la MISMA clave con la que lo guardás en el login
+  if (token) {
+    req = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
+  }
+  return next(req);
 };

@@ -1,8 +1,28 @@
-@for (f of favoritos; track f.id) {
+<!-- @for (f of favoritos; track f.id) {
  <div class="fav">
  {{ f.nombre }} — ${{ f.precio }}
  <button (click)="quitar(f.id_producto)">Quitar</button>
  </div>
 } @empty {
  <p>Todavía no tenés favoritos.</p>
-}
+} -->
+
+
+<section class="favoritos-page">
+  <h1>Mis favoritos</h1>
+
+  <div class="grilla">
+    @for (f of favoritos; track f.id_producto) {
+      <div class="fav">
+        @if (f.imagen) {
+          <img [src]="f.imagen" [alt]="f.nombre">
+        }
+        <h3>{{ f.nombre }}</h3>
+        <p class="precio">${{ f.precio }}</p>
+        <button class="btn-quitar" (click)="quitar(f.id_producto)">♥ Quitar</button>
+      </div>
+    } @empty {
+      <p class="vacio">Todavía no tenés favoritos.</p>
+    }
+  </div>
+</section>
