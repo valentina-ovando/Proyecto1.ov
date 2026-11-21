@@ -64,65 +64,144 @@
 } -->
 
 
-@if (!cargando) {
-  @if (items.length === 0) {
-    <p class="text-center mt-5">Tu carrito está vacío.</p>
-  } @else {
-    <table class="table table-bordered border-danger-subtle text-center align-middle">
-      <thead>
-        <tr>
-          <th>Imagen</th>
-          <th>Producto</th>
-          <th>Cantidad</th>
-          <th>Eliminar</th>
-        </tr>
-      </thead>
+<div class="container carrito-container py-4">
 
-      <tbody>
-        @for (p of items; track p.id_producto) {
-          <tr>
-            <td>
-              <img [src]="p.imagen" width="80" [alt]="p.nombre">
-            </td>
-
-            <td>{{ p.nombre }}</td>
-
-            <td>
-              <button class="btn btn-sm btn-outline-danger" (click)="restar(p)">-</button>
-
-              <span class="mx-2">{{ p.cantidad }}</span>
-
-              <button class="btn btn-sm btn-outline-success" (click)="sumar(p)">+</button>
-
-              <br><br>
-
-              <strong>${{ subtotal(p) }}</strong>
-            </td>
-
-            <td>
-              <button class="btn btn-danger" (click)="quitar(p.id_producto)">
-                Eliminar
-              </button>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
-
-    <!-- TOTAL Y BOTONES -->
-    <div class="text-center mt-5 mb-4">
-      <h4 class="mb-3">
-        Total de la compra:
-        <strong>${{ total() }}</strong>
-      </h4>
-
-      <button class="btn btn-outline-secondary px-4 py-2 me-2" (click)="vaciar()">
-        Vaciar carrito
-      </button>
-
-      <button class="btn btn-success px-5 py-2" (click)="finalizarCompra()">
-        Finalizar compra
-      </button>
+  @if (cargando) {
+    <div class="text-center py-5">
+      <div class="spinner-border text-success" role="status"></div>
+      <p class="mt-3">Cargando carrito...</p>
     </div>
+  } @else {
+
+    @if (items.length === 0) {
+
+      <div class="carrito-vacio text-center py-5">
+        <i class="bi bi-cart3 icono-carrito"></i>
+        <h3 class="mt-3">Tu carrito está vacío</h3>
+        <p class="text-muted">
+          Todavía no agregaste ningún producto.
+        </p>
+      </div>
+
+    } @else {
+
+      <div class="titulo-carrito mb-4">
+        <h2 class="fw-bold">Mi carrito</h2>
+        <p class="text-muted">
+          Revisá los productos que seleccionaste.
+        </p>
+      </div>
+
+      <div class="card carrito-card shadow-sm">
+
+        <div class="table-responsive">
+
+          <table class="table table-bordered border-danger-subtle
+                         text-center align-middle mb-0">
+
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              @for (p of items; track p.id_producto) {
+
+                <tr>
+
+                  <td>
+                    <img
+                      [src]="p.imagen"
+                      [alt]="p.nombre"
+                      class="producto-img">
+                  </td>
+
+                  <td class="producto-nombre">
+                    {{ p.nombre }}
+                  </td>
+
+                  <td>
+                    <div class="cantidad-control">
+
+                      <button
+                        class="btn btn-sm btn-outline-danger"
+                        (click)="restar(p)">
+                        -
+                      </button>
+
+                      <span class="cantidad">
+                        {{ p.cantidad }}
+                      </span>
+
+                      <button
+                        class="btn btn-sm btn-outline-success"
+                        (click)="sumar(p)">
+                        +
+                      </button>
+
+                    </div>
+                  </td>
+
+                  <td class="subtotal">
+                    ${{ subtotal(p) }}
+                  </td>
+
+                  <td>
+                    <button
+                      class="btn btn-outline-danger btn-eliminar"
+                      (click)="quitar(p.id_producto)">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+
+                </tr>
+
+              }
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- RESUMEN DE COMPRA -->
+      <div class="resumen-compra mt-4">
+
+        <h4 class="fw-bold mb-3">Resumen de compra</h4>
+
+        <div class="total-box">
+          <span>Total de la compra</span>
+          <strong>${{ total() }}</strong>
+        </div>
+
+        <div class="botones-carrito">
+
+          <button
+            class="btn btn-outline-secondary"
+            (click)="vaciar()">
+            Vaciar carrito
+          </button>
+
+          <button
+            class="btn btn-success btn-finalizar"
+            (click)="finalizarCompra()">
+            Finalizar compra
+          </button>
+
+        </div>
+
+      </div>
+
+    }
+
   }
-}
+
+</div>

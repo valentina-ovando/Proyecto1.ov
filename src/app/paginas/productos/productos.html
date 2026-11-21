@@ -17,6 +17,7 @@
 
 <section class="productos">
   <h2 class="titulo">Nuestros Productos</h2>
+  <p class="subtitulo">Descubrí todo lo que tenemos para vos</p>
 
   <div class="buscador">
     <input [(ngModel)]="buscar" (keyup.enter)="cargar()" placeholder="Buscar producto...">
@@ -26,16 +27,17 @@
   <div class="grilla">
     @for (p of productos(); track p.id) {
       <div class="tarjeta">
+        <button class="btn-fav" (click)="favorito(+p.id)" aria-label="Agregar a favoritos">♥</button>
+
         <div class="imagen">
-          <img [src]="'http://localhost/api_proyecto/public/' + p.imagen" [alt]="p.nombre">
+          <img [src]="'/' + p.imagen" [alt]="p.nombre">
         </div>
+
         <h3>{{ p.nombre }}</h3>
         <p class="descripcion">{{ p.descripcion }}</p>
         <strong class="precio">${{ p.precio }}</strong>
-        <div class="acciones">
-          <button class="btn-comprar" (click)="agregar(+p.id)">Agregar al carrito</button>
-          <button class="btn-fav" (click)="favorito(+p.id)" aria-label="Agregar a favoritos">♥</button>
-        </div>
+
+        <button class="btn-comprar" (click)="agregar(+p.id)">Comprar</button>
       </div>
     } @empty {
       <p class="vacio">No se encontraron productos.</p>

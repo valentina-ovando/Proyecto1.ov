@@ -24,45 +24,74 @@
 //  }
 // }
 
+
 import { Injectable, signal } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, tap } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class CarritoService {
+
   private apiUrl = "http://localhost/api_proyecto/public/carrito";
 
-  // cantidad total de productos, la usa el menú
+  // Cantidad total de productos del carrito
   cantidad = signal(0);
 
-  // El token lo agrega el interceptor: acá no hace falta tocarlo.
   constructor(private http: HttpClient) {}
 
+  // VER CARRITO
   ver(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl).pipe(
-      tap(items =>
+      tap(items => {
         this.cantidad.set(
-          items.reduce((total, item) => total + Number(item.cantidad ?? 1), 0)
-        )
-      )
+          items.reduce(
+            (total, item) => total + Number(item.cantidad ?? 1),
+            0
+          )
+        );
+      })
     );
   }
 
+  // AGREGAR PRODUCTO
   agregar(idProducto: number, cantidad: number): Observable<any> {
     return this.http
-      .post(`${this.apiUrl}/agregar`, { id_producto: idProducto, cantidad })
-      .pipe(tap(() => this.ver().subscribe()));
+      .post(`${this.apiUrl}/agregar`, {
+        id_producto: idProducto,
+        cantidad: cantidad
+      })
+      .pipe(
+        tap(() => this.ver().subscribe())
+      );
   }
 
+  // ACTUALIZAR CANTIDAD
   actualizar(idProducto: number, cantidad: number): Observable<any> {
-    return this.http.put(`${this.apiUrl}/actualizar/${idProducto}`, { cantidad });
+    return this.http
+      .put(`${this.apiUrl}/actualizar/${idProducto}`, {
+        cantidad: cantidad
+      })
+      .pipe(
+        tap(() => this.ver().subscribe())
+      );
   }
 
+  // ELIMINAR PRODUCTO
   eliminar(idProducto: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/eliminar/${idProducto}`);
+    return this.http
+      .delete(`${this.apiUrl}/eliminar/${idProducto}`)
+      .pipe(
+        tap(() => this.ver().subscribe())
+      );
   }
 
+  // VACIAR CARRITO
   vaciar(): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/vaciar`);
+    return this.http
+      .delete(`${this.apiUrl}/vaciar`)
+      .pipe(
+        tap(() => this.cantidad.set(0))
+      );
   }
+
 }

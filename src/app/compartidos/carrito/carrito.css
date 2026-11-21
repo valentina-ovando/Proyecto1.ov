@@ -1,0 +1,184 @@
+
+/* CONTENEDOR GENERAL */
+.carrito-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* TITULO */
+.titulo-carrito h2 {
+  color: #343a40;
+}
+
+.titulo-carrito p {
+  margin-bottom: 0;
+}
+
+/* TARJETA */
+.carrito-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+}
+
+/* TABLA */
+.table {
+  min-width: 650px;
+}
+
+.table thead {
+  background-color: #f8e9ed;
+}
+
+.table thead th {
+  color: #6b3e4b;
+  padding: 16px;
+  font-weight: 600;
+}
+
+.table tbody td {
+  padding: 15px;
+}
+
+.table tbody tr:hover {
+  background-color: #fff8fa;
+}
+
+/* IMAGEN */
+.producto-img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #fff8fa;
+  padding: 5px;
+}
+
+/* NOMBRE */
+.producto-nombre {
+  font-weight: 600;
+  color: #444;
+}
+
+/* CANTIDAD */
+.cantidad-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.cantidad-control button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.cantidad {
+  font-weight: 600;
+  min-width: 22px;
+}
+
+/* SUBTOTAL */
+.subtotal {
+  font-weight: bold;
+  color: #555;
+}
+
+/* ELIMINAR */
+.btn-eliminar {
+  border-radius: 8px;
+}
+
+/* RESUMEN */
+.resumen-compra {
+  max-width: 450px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+  background-color: #fff8fa;
+  border: 1px solid #f1d9e0;
+  border-radius: 18px;
+}
+
+/* TOTAL */
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #ead5dc;
+  border-bottom: 1px solid #ead5dc;
+  font-size: 17px;
+}
+
+.total-box strong {
+  font-size: 24px;
+  color: #198754;
+}
+
+/* BOTONES */
+.botones-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.botones-carrito button {
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-finalizar {
+  background-color: #198754;
+  color: white;
+}
+
+.btn-finalizar:hover {
+  background-color: #146c43;
+  color: white;
+}
+
+/* CARRITO VACÍO */
+.carrito-vacio {
+  background-color: #fff8fa;
+  border-radius: 18px;
+  margin-top: 30px;
+}
+
+.icono-carrito {
+  font-size: 60px;
+  color: #d89aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+
+  .carrito-container {
+    padding: 15px !important;
+  }
+
+  .titulo-carrito h2 {
+    font-size: 23px;
+  }
+
+  .producto-img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .resumen-compra {
+    padding: 18px;
+  }
+
+  .total-box strong {
+    font-size: 21px;
+  }
+
+}
