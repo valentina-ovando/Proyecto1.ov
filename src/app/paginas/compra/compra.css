@@ -1,0 +1,98 @@
+:host {
+  display: block;
+}
+
+.compra-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.compra-titulo {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.compra-card {
+  background: #fff;
+  border: 1px solid #f3b6e8;
+  border-top: 6px solid #ff85f8;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.compra-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3dff0;
+}
+
+.item-nombre {
+  flex: 1;
+  font-weight: 600;
+}
+
+.item-cantidad {
+  color: #777;
+}
+
+.item-precio {
+  min-width: 90px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.compra-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding-top: 16px;
+  border-top: 2px dashed #f3b6e8;
+  font-size: 1.25rem;
+}
+
+.compra-total strong {
+  color: #b5179e;
+}
+
+.btn-confirmar {
+  width: 100%;
+  background: #ff85f8;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-confirmar:hover {
+  background: #e86ae0;
+}
+
+.compra-vacio {
+  text-align: center;
+  color: #777;
+  padding: 40px 0;
+}
+
+@media (max-width: 576px) {
+  .compra-item {
+    flex-wrap: wrap;
+  }
+
+  .item-nombre {
+    flex-basis: 100%;
+  }
+
+  .item-precio {
+    margin-left: auto;
+  }
+}

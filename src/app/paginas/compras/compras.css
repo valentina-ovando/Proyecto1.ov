@@ -1,0 +1,91 @@
+:host {
+  display: block;
+}
+
+.compras-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.compras-titulo {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.compra-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: #fff;
+  border: 1px solid #f3b6e8;
+  border-left: 6px solid #ff85f8;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.compra-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.compra-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.compra-numero {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.compra-fecha {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.compra-total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #b5179e;
+}
+
+.btn-ticket {
+  background: #ff85f8;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.btn-ticket:hover {
+  background: #e86ae0;
+}
+
+.compras-vacio {
+  text-align: center;
+  color: #777;
+  padding: 40px 0;
+}
+
+/* Celulares: todo en columna */
+@media (max-width: 576px) {
+  .compra-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-ticket {
+    width: 100%;
+    text-align: center;
+  }
+}

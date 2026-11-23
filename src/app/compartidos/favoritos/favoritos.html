@@ -7,12 +7,15 @@
  <p>Todavía no tenés favoritos.</p>
 } -->
 
-
 <section class="favoritos-page">
   <h1>Mis favoritos</h1>
 
+  @if (error()) {
+    <p class="vacio">{{ error() }}</p>
+  }
+
   <div class="grilla">
-    @for (f of favoritos; track f.id_producto) {
+    @for (f of favoritos(); track f.id_producto) {
       <div class="fav">
         @if (f.imagen) {
           <img [src]="f.imagen" [alt]="f.nombre">
@@ -22,7 +25,9 @@
         <button class="btn-quitar" (click)="quitar(f.id_producto)">♥ Quitar</button>
       </div>
     } @empty {
-      <p class="vacio">Todavía no tenés favoritos.</p>
+      @if (!cargando() && !error()) {
+        <p class="vacio">Todavía no tenés favoritos.</p>
+      }
     }
   </div>
 </section>

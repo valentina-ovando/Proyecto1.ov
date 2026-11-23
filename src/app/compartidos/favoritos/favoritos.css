@@ -36,68 +36,111 @@
     margin-top: 10px;
 } */
 
-.card{
-    position: relative;               /* para ubicar el corazón arriba a la derecha */
-    width: 280px;
-    border: 2px solid #ffc2d7;
-    border-radius: 18px;
-    background-color: #fff0f6;
-    padding: 15px;
-    text-align: center;
-    margin: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+:host {
+  display: block;
 }
 
-.card img{
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
+.favoritos-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px;
 }
 
-.btn-carrito{
-    width: 100%;
+.favoritos-page h1 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Grilla de tarjetas */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta */
+.fav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #f3b6e8;
+  border-top: 6px solid #ff85f8;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fav:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen con tamaño fijo (esto arregla la imagen gigante) */
+.fav img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fdf0fc;
+  margin-bottom: 12px;
+}
+
+.fav h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #b5179e;
+  margin-bottom: 14px;
+}
+
+/* Botón quitar */
+.btn-quitar {
+  margin-top: auto;
+  width: 100%;
+  background: #fff;
+  color: #b5179e;
+  font-weight: 600;
+  border: 1px solid #ff85f8;
+  border-radius: 10px;
+  padding: 9px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-quitar:hover {
+  background: #ff85f8;
+  color: #000;
+}
+
+/* Mensaje de lista vacía o error */
+.vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #777;
+  padding: 40px 0;
+}
+
+/* Celulares: dos columnas más chicas */
+@media (max-width: 576px) {
+  .grilla {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .fav {
     padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 12px;
-    background-color: #e91e63;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
+  }
 
-.btn-carrito:hover{
-    background-color: #d81b60;
-}
-
-.btn-danger{
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* Corazón de favoritos */
-.btn-corazon{
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #e91e63;
-    font-size: 1.4rem;
-    line-height: 1;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
-    transition: .3s;
-}
-
-.btn-corazon:hover{
-    transform: scale(1.1);
-}
-
-.btn-corazon.activo{
-    background-color: #e91e63;
-    color: #fff;
+  .fav img {
+    height: 140px;
+  }
 }

@@ -1,10 +1,35 @@
-<!-- Si ya llegaron los datos del ticket, los mostramos -->
-@if (ticket) {
- <h2>Ticket {{ ticket.numero_ticket }}</h2>
- <p>Fecha: {{ ticket.fecha }}</p>
- <!-- target="_blank" lo abre en otra pestaña; "download" sugiere descargarlo -->
- <a [href]="urlPdf" target="_blank" download>Descargar PDF</a>
+<!-- Si ya llegaron los datos del ticket, los mostramos
+@if (ticket()) {
+ <h2>Ticket {{ ticket().numero_ticket }}</h2>
+ <p>Fecha: {{ ticket().fecha }}</p>
+  target="_blank" lo abre en otra pestaña; "download" sugiere descargarlo 
+ <a [href]="urlPdf()" target="_blank" download>Descargar PDF</a>
 } @else {
- <!-- Mientras tanto, mostramos un aviso -->
+  Mientras tanto, mostramos un aviso 
  <p>Cargando ticket...</p>
-}
+} -->
+
+<div class="ticket-container">
+  @if (ticket()) {
+    <div class="ticket-card">
+      <div class="ticket-icono">✓</div>
+      <h2 class="ticket-titulo">¡Gracias por tu compra!</h2>
+      <p class="ticket-subtitulo">Tu compra se registró correctamente.</p>
+
+      <div class="ticket-datos">
+        <div class="ticket-fila">
+          <span>N.º de ticket</span>
+          <strong>{{ ticket().numero_ticket }}</strong>
+        </div>
+        <div class="ticket-fila">
+          <span>Fecha</span>
+          <strong>{{ ticket().fecha }}</strong>
+        </div>
+      </div>
+
+      <a class="btn-pdf" [href]="urlPdf()" target="_blank" download>Descargar PDF</a>
+    </div>
+  } @else {
+    <p class="ticket-cargando">Cargando ticket...</p>
+  }
+</div>

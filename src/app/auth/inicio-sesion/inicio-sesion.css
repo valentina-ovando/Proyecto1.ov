@@ -75,71 +75,76 @@
 
 
 
-.login-container {
+.login {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  min-height: 70vh;
+  padding: 48px 16px;
 }
 
-.login-card {
-  background-color: white;
-  padding: 50px;
-  width: 700px;
-  max-width: 95%;
-  border-radius: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.login-card h1 {
-  font-family: 'Pacifico', cursive;
-  color: #e91e63;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.subtitulo {
-  text-align: center;
-  color: #777;
-  margin-bottom: 25px;
-}
-
-.input-pink {
-  border-radius: 15px;
-  border: 2px solid #e91e63;
-}
-
-.input-pink:focus {
-  border-color: #e91e63;
-  box-shadow: 0 0 5px #f8a5c2;
-}
-
-.btn-login {
-  background-color: #e91e63;
-  color: white;
+.login .login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 28px;
+  background: white;
+  border: 2px solid #ffc2d7;
   border-radius: 20px;
-  padding: 10px;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.25);
+  text-align: center;
+}
+
+.login .login-titulo {
+  margin-bottom: 24px;
+  color: #e91e63;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login input {
+  padding: 12px 18px;
+  border: 2px solid #ffd1dc;
+  border-radius: 999px;
+  background: #fff8fa;
+  outline: none;
+}
+
+.login input:focus {
+  border-color: #e91e63;
+}
+
+.login .login-error {
+  margin: 0;
+  color: #c2185b;
+  font-size: 0.9rem;
+}
+
+.login .btn-ingresar {
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  background: #e91e63;
+  color: white;
   font-weight: 600;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.btn-login:hover {
-  background-color: #d81b60;
-  color: white;
+.login .btn-ingresar:hover {
+  background: #d81b60;
 }
 
-.registro-texto {
-  text-align: center;
-  margin-top: 20px;
+.login .login-registro {
+  margin: 20px 0 0;
+  color: #666;
 }
 
-.registro-texto a {
+.login .login-registro a {
   color: #e91e63;
-  text-decoration: none;
   font-weight: 600;
-}
-
-.registro-texto a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }

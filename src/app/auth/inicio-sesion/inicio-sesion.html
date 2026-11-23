@@ -32,37 +32,37 @@
   </div>
 </div> -->
 
-
-<div class="login-container">
+<section class="login">
   <div class="login-card">
+    <h2 class="login-titulo">Iniciar sesión</h2>
 
-    <h1>Nail Salon</h1>
-    <p class="subtitulo">Iniciar sesión</p>
+    <form (ngSubmit)="ingresar()">
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Email"
+        autocomplete="username"
+        required>
 
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <input
-          type="text"
-          class="form-control input-pink"
-          placeholder="Usuario">
-      </div>
+      <input
+        type="password"
+        name="clave"
+        [(ngModel)]="clave"
+        placeholder="Contraseña"
+        autocomplete="current-password"
+        required>
 
-      <div class="col-md-6 mb-3">
-        <input
-          type="password"
-          class="form-control input-pink"
-          placeholder="Contraseña">
-      </div>
-    </div>
+      @if (error()) {
+        <p class="login-error">{{ error() }}</p>
+      }
 
-    <button class="btn btn-login w-100">
-      Ingresar
-    </button>
+      <button type="submit" class="btn-ingresar">Ingresar</button>
+    </form>
 
-    <p class="registro-texto">
-      ¿No tiene cuenta?
-      <a routerLink="/auth/registro">Registrarse</a>
+    <p class="login-registro">
+      ¿No tenés cuenta?
+      <a href="/auth/registro">Registrarse</a>
     </p>
-
   </div>
-</div>
+</section>

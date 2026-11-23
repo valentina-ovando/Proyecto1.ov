@@ -44,19 +44,20 @@
 // }
 
 
-
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, signal } from "@angular/core";
 import { Router } from "@angular/router";
 import { CarritoService } from "../../servicios/carrito-servicios";
 
 @Component({
   selector: "app-carrito",
-  templateUrl: "./carrito.html"
+  templateUrl: "./carrito.html",
+  styleUrl: "./carrito.css" // <-- faltaba: sin esto no se aplica tu CSS
 })
 export class CarritoComponent implements OnInit {
 
-  items: any[] = [];
-  cargando = true;
+  // signals: la pantalla se actualiza sola cuando cambian
+  items = signal<any[]>([]);
+  cargando = signal(true);
 
   constructor(
     private carrito: CarritoService,
@@ -69,23 +70,28 @@ export class CarritoComponent implements OnInit {
 
   // CARGAR PRODUCTOS DEL CARRITO
   cargar(): void {
-    this.cargando = true;
+    this.cargando.set(true);
 
     this.carrito.ver().subscribe({
-      next: (lista: any[]) => {
-        this.items = lista;
-        this.cargando = false;
+      next: (lista: any) => {
+        this.items.set(Array.isArray(lista) ? lista : lista?.data ?? []);
+        this.cargando.set(false);
       },
       error: (error) => {
         console.error("Error al cargar el carrito:", error);
-        this.cargando = false;
+        this.cargando.set(false);
+
+        // sin sesión iniciada -> mandar al login
+        if (error.status === 401) {
+          this.router.navigate(["/auth/inicio-sesion"]);
+        }
       }
     });
   }
 
   // CALCULAR TOTAL
   total(): number {
-    return this.items.reduce(
+    return this.items().reduce(
       (suma, i) =>
         suma + Number(i.cantidad) * Number(i.precio_unitario),
       0
@@ -153,7 +159,7 @@ export class CarritoComponent implements OnInit {
 
   // FINALIZAR COMPRA
   finalizarCompra(): void {
-    if (this.items.length === 0) {
+    if (this.items().length === 0) {
       return;
     }
 

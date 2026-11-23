@@ -1,0 +1,90 @@
+:host {
+  display: block;
+}
+
+.ticket-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.ticket-card {
+  background: #fff;
+  border: 1px solid #f3b6e8;
+  border-top: 6px solid #ff85f8;
+  border-radius: 14px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.ticket-icono {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #ff85f8;
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+.ticket-titulo {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.ticket-subtitulo {
+  color: #777;
+  margin-bottom: 24px;
+}
+
+.ticket-datos {
+  border-top: 2px dashed #f3b6e8;
+  border-bottom: 2px dashed #f3b6e8;
+  padding: 16px 0;
+  margin-bottom: 24px;
+}
+
+.ticket-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.ticket-fila span {
+  color: #777;
+}
+
+.ticket-fila strong {
+  color: #b5179e;
+}
+
+.btn-pdf {
+  display: inline-block;
+  background: #ff85f8;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.btn-pdf:hover {
+  background: #e86ae0;
+}
+
+.ticket-cargando {
+  text-align: center;
+  color: #777;
+  padding: 40px 0;
+}
+
+@media (max-width: 576px) {
+  .btn-pdf {
+    display: block;
+  }
+}

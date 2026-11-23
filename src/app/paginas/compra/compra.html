@@ -1,10 +1,36 @@
-<h2>Resumen de tu compra</h2>
-@for (i of items; track i.id_producto) {
+<!-- <h2>Resumen de tu compra</h2>
+@for (i of items(); track i.id_producto) {
  <p>{{ i.nombre }} x {{ i.cantidad }} — ${{ i.precio_unitario }}</p>
 }
 <p><strong>Total: ${{ total() }}</strong></p>
-@if (items.length > 0) {
+@if (items().length > 0) {
  <button (click)="finalizar()">Confirmar compra</button>
 } @else {
  <p>No hay productos en el carrito.</p>
-}
+} -->
+
+
+<div class="compra-container">
+  <h2 class="compra-titulo">Resumen de tu compra</h2>
+
+  @if (items().length > 0) {
+    <div class="compra-card">
+      @for (i of items(); track i.id_producto) {
+        <div class="compra-item">
+          <span class="item-nombre">{{ i.nombre }}</span>
+          <span class="item-cantidad">x {{ i.cantidad }}</span>
+          <span class="item-precio">${{ i.precio_unitario }}</span>
+        </div>
+      }
+
+      <div class="compra-total">
+        <span>Total</span>
+        <strong>${{ total() }}</strong>
+      </div>
+
+      <button class="btn-confirmar" (click)="finalizar()">Confirmar compra</button>
+    </div>
+  } @else {
+    <p class="compra-vacio">No hay productos en el carrito.</p>
+  }
+</div>
